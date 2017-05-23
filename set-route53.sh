@@ -1,4 +1,6 @@
-ZONE=${ZONE:-YOUR_ZONE_NAME_HERE}
+#!/bin/bash
+
+ZONE=${ZONE:-$YOUR_ZONE_NAME_HERE}
 
 INSTANCE_ID=$(wget -qO- http://instance-data/latest/meta-data/instance-id)
 REGION=$(wget -qO- http://instance-data/latest/meta-data/placement/availability-zone | sed -e 's \([0-9][0-9]*\)[a-z]*$ \1 ')
