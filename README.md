@@ -21,3 +21,8 @@ Create a CNAME entry in Route 53 for an EC2 host, based on the "Name" EC2 tag of
 `set-route53.sh`
 
 It is left as an exercise for the reader to configure this to run when your instance boots. This will depend on whether your distribution uses systemd, init.d, upstart, or you could  use crontab @reboot.
+
+Note that if you are using an IAM instance role, it takes some time for the credentials to get to the machine after bootup. My crontab file contains
+```
+@reboot	( sleep 15; /usr/local/bin/set-route53.sh ) &
+```
