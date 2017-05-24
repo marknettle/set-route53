@@ -14,7 +14,7 @@ Create a CNAME entry in Route 53 for an EC2 host, based on the "Name" EC2 tag of
   
   this zone should include a trailing dot (.)
 * appropriate credentials to update Route 53. Either
-  * in `~/.aws/credentials`, which you can do with `aws configure`
+  * in `~/.aws/credentials`, which you can do with `aws configure`, **but this is terrible security practice. Best not.**
   * or use an IAM instance role which has the policy elements from [`set-route53-policy.json`](set-route53-policy.json)
 
 ## usage
